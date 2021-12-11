@@ -1,0 +1,6 @@
+jupyter
+jupyterlab
+gym[classic_control]
+numpy
+matplotlib
+torch

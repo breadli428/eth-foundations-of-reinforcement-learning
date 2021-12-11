@@ -1,0 +1,67 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[addpoints,10pt]{exam}
+
+% Include custom style files
+\usepackage{commands}
+\usepackage{environments}
+
+\usepackage{psfrag}
+\usepackage[dvips]{epsfig}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+
+\usepackage{algorithm,algorithmic}
+\newcommand{\nb}[3]{{\colorbox{#2}{\bfseries\sffamily\scriptsize\textcolor{white}{#1}}}{\textcolor{#2}{\sf\small\textit{#3}}}}
+\begin{document}
+\thispagestyle{plain}
+
+% parenthesis
+\newcommand{\autopar}[1]{{\left(#1\right)}}
+\newcommand{\automedpar}[1]{{\left[#1\right]}}
+\newcommand{\autobigpar}[1]{{\left\{#1\right\}}}
+\newcommand{\autoabs}[1]{{\left|#1\right|}}
+\newcommand{\autonorm}[1]{{\left\|#1\right\|}}
+\newcommand{\autoprod}[1]{{\left\langle#1\right\rangle}}
+
+% comments
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace*{-1.5cm}
+{\noindent \rule{15.8cm}{.3mm} \\}
+\begin{center} \bf
+{\Large Foundations of Reinforcement Learning \medskip
+\\
+Assignment 2 \medskip}
+\\ Issue date: November 09, 2021
+\\ Due date: November 26, 2021
+\\ 
+\end{center}
+\rule{15.8cm}{.3mm} \\[0cm]
+\setlength{\parindent}{0pt}
+%\pagenumbering{gobble}
+\pagestyle{empty}
+\global\hyphenpenalty=100000 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{Coverage:} Value-based methods, policy gradient methods \medskip
+
+
+\input{instructions}
+
+%==========================================================================================================
+
+\input{HW_content}
+
+\clearpage
+
+%\input{solutions}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

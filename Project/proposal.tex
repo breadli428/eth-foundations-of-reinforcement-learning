@@ -1,0 +1,67 @@
+% This is borrowed from the 2021 LaTeX2e package for submissions to the Conference on Neural Information Processing Systems (NeurIPS). All credits go to the authors of the original package, which was obtained from this website:
+% https://nips.cc/Conferences/2021/PaperInformation/StyleFiles
+
+\documentclass{article}
+\usepackage[final, nonatbib]{neurips_2021}
+\usepackage[numbers]{natbib}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{graphicx}
+
+
+\title{Hierarchical Deep Reinforcement Learning for Legged Robot Navigation}
+% You should enter the name of your project here.
+
+\author{
+    Chenhao Li \\
+    \texttt{chenhli@student.ethz.ch} \\
+    %% examples of more authors
+    % \And
+    % Author \\
+    % \texttt{email@student.ethz.ch} \\
+    % \AND
+    % Author \\
+    % \texttt{email@student.ethz.ch} \\
+}
+% make sure to include the full names of all the team members
+
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Description}
+Mobile navigation is an important yet challenging topic in robotics. So far, legged robots such as ANYmal have acquired robust locomotion skills given velocity commands \cite{DBLP:journals/corr/abs-2010-11251}, and the capability of the robots can be greatly extended when equipped with the ability to follow given trajectories. In this project, we will investigate a hierarchical control structure to regulate the existing velocity-commanded locomotion policy to a target-commanded counterpart. The potential methods include mixture-of-experts, multiplicative compositional policies, Riemannian motion policies etc.
+
+
+\section{Introduction / Challenges}
+Training locomotion policy for legged systems has never been more efficient. Previous work by Rudin et al. \cite{rudin2021learning} has achieved fast policy generation for real-world robotic tasks by using massive parallelism on a single workstation GPU. The parallel approach allows training policies for flat terrain in under four minutes, and in twenty minutes for uneven terrain. 
+
+The potential challenges for target-commanded locomotion using hierarchical control might occur in aspects including control structure formulation, command sampling strategy, reward design and computational cost.
+
+
+\section{Methods / Algorithms / Implementations}
+At this stage, I will focus on the legged robot navigation on flat terrain. This setting suffices to test the hierarchical control idea and meanwhile will not imposed too much demand on computational resources.
+
+Isaac Gym will be used as the simulation environment, as it offers a high performance learning platform to train policies for wide variety of robotics tasks directly on GPU \cite{makoviychuk2021isaac}. Both physics simulation and the neural network policy training reside on GPU and communicate by directly passing data from physics buffers to PyTorch tensors without ever going through any CPU bottlenecks.
+
+Proximal Policy Optimization (PPO) will be used as RL algorithm given its popularity in recent years.
+
+Reward will be awarded if the robot successfully reaches the target and penalty will be given if it incurs collision with the ground. Further penalties might be imposed to regularize large velocities.
+
+
+\section{Evaluation}
+The tracking performance of the robot can be evaluated by the mean or cumulative position error between the target commanded and where the robot ends up to be. This error is also reflected in the reward design.
+
+
+\medskip
+\bibliographystyle{unsrtnat}
+\bibliography{ref.bib}
+
+\end{document}

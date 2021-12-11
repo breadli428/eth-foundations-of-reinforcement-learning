@@ -1,0 +1,55 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[addpoints,10pt]{exam}
+
+% Include custom style files
+\usepackage{commands}
+\usepackage{environments}
+
+\usepackage{psfrag}
+\usepackage[dvips]{epsfig}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+
+
+
+\begin{document}
+\thispagestyle{plain}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace*{-1.5cm}
+{\noindent \rule{15.8cm}{.3mm} \\}
+\begin{center} \bf
+{\Large Foundations of Reinforcement Learning \medskip
+\\
+Assignment 1 \medskip}
+\\ Issue date: October 11, 2021
+\\ Due date: October 29, 2021
+\\ 
+\end{center}
+\rule{15.8cm}{.3mm} \\[0cm]
+\setlength{\parindent}{0pt}
+%\pagenumbering{gobble}
+\pagestyle{empty}
+\global\hyphenpenalty=100000 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{Coverage:} Basics of MDP, Bellman equation, value iteration, policy iteration \medskip
+
+
+\input{instructions}
+
+%==========================================================================================================
+
+\input{exercises}
+
+\clearpage
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
